@@ -4,7 +4,7 @@
     <div :class="'homepage ' + (loading ? 'loading' : '')">
       <div class="snack-bar" :class="hiddenLoading && showSnack ? '' : 'snack-bar-hidden'">
         <md-toolbar class="md-elevation-5 snack-content">
-          <div style="flex: 1">授权有效！</div>
+          <div style="flex: 1">研究生用户，入校授权有效！</div>
           <md-button class="md-icon-button md-primary" @click="showSnack = false">关闭</md-button>
         </md-toolbar>
       </div>
