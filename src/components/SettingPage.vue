@@ -41,8 +41,15 @@
             <span>展示 AppBar</span>
             <span>如在微信内使用，则无需展示 AppBar</span>
           </div>
-
           <md-switch v-model="showAppBar"></md-switch>
+      </md-list-item>
+
+      <md-list-item>
+          <div class="md-list-item-text">
+            <span>显示入校</span>
+            <span>开启显示入校，关闭显示出校，可通过点击校徽切换</span>
+          </div>
+          <md-switch v-model="inout"></md-switch>
       </md-list-item>
       </md-list>
     </div>
@@ -57,7 +64,8 @@ const fields = {
   leaveText: '研究生用户，出校登记有效！',
   personType: '研究生（硕士）',
   name: '试着点我三次',
-  showAppBar: true
+  showAppBar: true,
+  inout: true
 }
 
 function s2b (s) {

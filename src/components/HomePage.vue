@@ -45,7 +45,7 @@
       </div>
 
       <div class="logo" v-if="hiddenLoading">
-        <img src="../assets/logo.png" alt="" class="logo-img">
+        <img src="../assets/logo.png" alt="" class="logo-img" @click="setInOut">
       </div>
     </div>
   </div>
@@ -69,16 +69,14 @@ export default {
       timeStr: new Date().toLocaleString(),
       name: '试着点我三次',
       personType: localStorage.getItem('personType') || '未设置',
-      clickCount: 0
+      clickCount: 0,
+      inout: localStorage.getItem('inout') == "true"
     }
   },
 
   computed: {
     textContent () {
-      const { type } = this.$route.query
-      const tText = type && type === 'out' ?
-        localStorage.getItem('leaveText') :
-        localStorage.getItem('enterText')
+      const tText = this.inout ? localStorage.getItem('enterText') : localStorage.getItem('leaveText')
       return tText || '尚未设置，请点击用户姓名进入设置页'
     }
   },
@@ -103,6 +101,12 @@ export default {
     const localName = localStorage.getItem('name')
     if (localName) this.name = localName
 
+    const localInOut = localStorage.getItem('inout')
+    if (localInOut == "true")
+      this.inout = true
+    else
+      this.inout = false
+
     const rawDate = new Date()
     const hour = rawDate.getHours()
     const minutes = rawDate.getMinutes()
@@ -120,6 +124,12 @@ export default {
         this.clickCount = 0
         this.$router.push('/setting')
       }
+    },
+    setInOut () {
+        this.inout = !this.inout
+        localStorage.setItem("inout", this.inout)
+        const tText = this.inout=="true" ? localStorage.getItem('enterText') : localStorage.getItem('leaveText')
+        document.getElementsByClassName("pass-result")[0].textContent = tText || '尚未设置，请点击用户姓名进入设置页'
     }
   }
 }
@@ -143,6 +153,8 @@ export default {
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
+  background: #fff;
+  padding-bottom: 12px;
   background: #fff;
   padding-bottom: 12px;
 
@@ -183,7 +195,7 @@ export default {
     width: 100%;
 
     .pass-result {
-      padding: 40px 20px 40px 20px;
+      padding: 46px 20px 34px 20px;
       box-sizing: border-box;
       color: rgb(0, 125, 0);
       font-size: 24px;
@@ -193,6 +205,8 @@ export default {
 
     .pass-list {
       padding-right: 20px;
+      padding-top: 4px;
+      padding-bottom: 12px;
       .list-icon {
         height: 22px;
         width: 22px;
