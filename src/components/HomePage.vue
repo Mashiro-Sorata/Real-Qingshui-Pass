@@ -252,7 +252,6 @@ export default {
     align-content: center;
     text-align: center;
     width: 100%;
-    padding-bottom: 100%;
 
     .logo-img {
       width: 53px;
