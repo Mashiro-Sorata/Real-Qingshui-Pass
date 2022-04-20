@@ -21,6 +21,6 @@ export default {
 @import "~vue-material/dist/theme/all"; // Apply the theme
 
 body {
-  background: white;
+  background: #fafafa;
 }
 </style>

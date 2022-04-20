@@ -136,10 +136,6 @@ export default {
   }
 }
 
-body {
-  background: #fafafa;
-}
-
 .homepage {
   display: flex;
   justify-content: center;
