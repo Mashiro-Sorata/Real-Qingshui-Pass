@@ -136,6 +136,10 @@ export default {
   }
 }
 
+body {
+  background: #fafafa;
+}
+
 .homepage {
   display: flex;
   justify-content: center;
@@ -143,6 +147,8 @@ export default {
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
+  background: #fff;
+  padding-bottom: 12px;
 
   .spinner {
     transition: all ease .3s;
@@ -181,7 +187,7 @@ export default {
     width: 100%;
 
     .pass-result {
-      padding: 30px 20px 40px 20px;
+      padding: 40px 20px 40px 20px;
       box-sizing: border-box;
       color: rgb(0, 125, 0);
       font-size: 24px;
@@ -192,8 +198,8 @@ export default {
     .pass-list {
       padding-right: 20px;
       .list-icon {
-        height: 30px;
-        width: 30px;
+        height: 22px;
+        width: 22px;
         opacity: 0.5;
       }
 
@@ -236,8 +242,8 @@ export default {
     width: 100%;
 
     .logo-img {
-      width: 60px;
-      height: 60px;
+      width: 53px;
+      height: 53px;
       margin-top: 20px;
     }
   }
