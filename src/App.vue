@@ -22,5 +22,6 @@ export default {
 
 body {
   background: #fafafa;
+  overflow-y: hidden;
 }
 </style>

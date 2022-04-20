@@ -94,8 +94,8 @@ export default {
         setTimeout(() => {
           this.showSnack = false
         }, 3000)
-      }, 500);
-    }, 1000);
+      }, 1500);
+    }, 0);
 
     // load name
     const localName = localStorage.getItem('name')
@@ -128,7 +128,7 @@ export default {
     setInOut () {
         this.inout = !this.inout
         localStorage.setItem("inout", this.inout)
-        const tText = this.inout=="true" ? localStorage.getItem('enterText') : localStorage.getItem('leaveText')
+        const tText = this.inout ? localStorage.getItem('enterText') : localStorage.getItem('leaveText')
         document.getElementsByClassName("pass-result")[0].textContent = tText || '尚未设置，请点击用户姓名进入设置页'
     }
   }
@@ -155,8 +155,6 @@ export default {
   overflow: hidden;
   background: #fff;
   padding-bottom: 12px;
-  background: #fff;
-  padding-bottom: 12px;
 
   .spinner {
     transition: all ease .3s;
@@ -164,6 +162,8 @@ export default {
     justify-content: center;
     flex-wrap: wrap;
     transform: translateY(0);
+    padding-top: 50%;
+    padding-bottom: 100%;
 
     .spinner-text {
       width: 100%;
@@ -195,7 +195,7 @@ export default {
     width: 100%;
 
     .pass-result {
-      padding: 46px 20px 34px 20px;
+      padding: 43px 20px 37px 20px;
       box-sizing: border-box;
       color: rgb(0, 125, 0);
       font-size: 24px;
@@ -205,11 +205,11 @@ export default {
 
     .pass-list {
       padding-right: 20px;
-      padding-top: 4px;
+      padding-top: 0px;
       padding-bottom: 12px;
       .list-icon {
-        height: 22px;
-        width: 22px;
+        height: 25px;
+        width: 25px;
         opacity: 0.5;
       }
 
@@ -222,6 +222,7 @@ export default {
 
         font-weight: bold;
         font-size: 24px;
+        margin: 0 -15px 0 16px;
 
         &.time-text {
           font-size: 18px;
@@ -248,13 +249,18 @@ export default {
 
   .logo {
     display: flex;
-    justify-content: center;
+    align-content: center;
+    text-align: center;
     width: 100%;
+    padding-bottom: 100%;
 
     .logo-img {
       width: 53px;
       height: 53px;
       margin-top: 20px;
+      position: relative;
+      left: 50%;
+      transform: translateX(-26.5px);
     }
   }
 
