@@ -195,7 +195,7 @@ export default {
     width: 100%;
 
     .pass-result {
-      padding: 35px 20px 45px 20px;
+      padding: 30px 20px 50px 20px;
       box-sizing: border-box;
       color: rgb(0, 125, 0);
       font-size: 24px;
@@ -206,7 +206,7 @@ export default {
     .pass-list {
       padding-right: 20px;
       padding-top: 0px;
-      padding-bottom: 12px;
+      padding-bottom: 8px;
       .list-icon {
         height: 25px;
         width: 25px;
@@ -256,7 +256,7 @@ export default {
     .logo-img {
       width: 53px;
       height: 53px;
-      margin-top: 17px;
+      margin-top: 21px;
       position: relative;
       left: 50%;
       transform: translateX(-26.5px);
