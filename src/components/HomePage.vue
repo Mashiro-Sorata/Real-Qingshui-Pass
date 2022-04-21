@@ -195,7 +195,7 @@ export default {
     width: 100%;
 
     .pass-result {
-      padding: 40px 20px 40px 20px;
+      padding: 35px 20px 45px 20px;
       box-sizing: border-box;
       color: rgb(0, 125, 0);
       font-size: 24px;
